@@ -10,15 +10,21 @@
          packages = with pkgs; [gnumake nodejs];
          shellHook = ''exec zsh'';
        };
-       packages.default = pkgs.buildNpmPackage {
-         dontNpmBuild = true;
-         name = "extractor";
-         npmDepsHash = "sha256-CWYS+d3CXKCKcj3s7lSwrKJTuq/xGtX2MDcUMFAKXFA=";
+       packages.default = pkgs.stdenv.mkDerivation rec {
+         pname = "extractor";
+         version = "1.0";
          src = ./.;
+         installPhase = ''mkdir -p $out/bin && cp main.js $out/bin'';
        };
+       # pkgs.buildNpmPackage {
+       #   dontNpmBuild = true;
+       #   name = "extractor";
+       #   npmDepsHash = "sha256-CWYS+d3CXKCKcj3s7lSwrKJTuq/xGtX2MDcUMFAKXFA=";
+       #   src = ./.;
+       # };
        apps.default = {
          type = "app";
-         program = "${self.packages."${system}".default}/lib/node_modules/jsonld-2-cooklang/main.js";
+         program = "${self.packages."${system}".default}/bin/main.js";
        };
     });
 }
