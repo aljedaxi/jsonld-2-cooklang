@@ -1,0 +1,10 @@
+{
+  "name": "jsonld-2-cooklang",
+  "version": "1.0.0",
+  "main": "main.js",
+  "type": "module",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "yaml": "^2.7.0"
+  }
+}
