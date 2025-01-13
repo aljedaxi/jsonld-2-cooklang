@@ -4,7 +4,5 @@
   "main": "main.js",
   "type": "module",
   "license": "GPL-3.0-or-later",
-  "dependencies": {
-    "yaml": "^2.7.0"
-  }
+  "dependencies": {}
 }

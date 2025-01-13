@@ -1,5 +1,6 @@
+#!/usr/bin/env node
+
 import process from 'node:process'
-import YAML from 'yaml'
 
 const processStdin = async () => {
   const inputs = [];
