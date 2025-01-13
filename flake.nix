@@ -18,7 +18,7 @@
        };
        apps.default = {
          type = "app";
-         program = "${self.packages."${system}".default}/lib/node_modules/${builtins.toString ./.}/main.js";
+         program = "${self.packages."${system}".default}/lib/node_modules/jsonld-2-cooklang/main.js";
        };
     });
 }
